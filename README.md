@@ -11,8 +11,8 @@ You would have had this experience while backing up your Raspberry Pi SD card.
 </p>
 
 ## Getting Started
-* ** OS : ubuntu or debian .. (etc) **
-* ** Prerequisites Program : nothing.. **
+* OS : ubuntu or debian .. (etc)
+* Prerequisites Program : nothing..
 
 ## HOW TO USE
 
@@ -22,5 +22,5 @@ You would have had this experience while backing up your Raspberry Pi SD card.
 * **Seungwon Lee** - *University : Korea Univ* -
 
 ## reference
-* ** https://raspberrypi.stackexchange.com/questions/499/how-can-i-resize-my-root-partition **
-* ** https://github.com/RPi-Distro/raspi-config/blob/master/raspi-config **
+* https://raspberrypi.stackexchange.com/questions/499/how-can-i-resize-my-root-partition
+* https://github.com/RPi-Distro/raspi-config/blob/master/raspi-config
