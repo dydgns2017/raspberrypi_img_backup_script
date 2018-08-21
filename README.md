@@ -68,7 +68,7 @@ ex ) excute script
 sudo bash raspberrypi_img_backup.sh /dev/sdb Raspberrypi.img
 ```
 
-When the entire script ends, check to see if the disk is write normally with \\
+When the entire script ends, check to see if the disk is write normally with <br/>
 the following command and test it on the raspberry pi:
 
 ```
