@@ -55,7 +55,7 @@ Device     Boot Start     End Sectors  Size Id Type
 /dev/sdb2       98304 4138976 4040673  1.9G 83 Linux
 ```
 
-Remember the name of the printed memory device and run the script by 
+Remember the name of the printed memory device and run the script by \\ 
 specifying the device name and image file name as factor values.
 
 ```
@@ -68,7 +68,7 @@ ex ) excute script
 sudo bash raspberrypi_img_backup.sh /dev/sdb Raspberrypi.img
 ```
 
-When the entire script ends, check to see if the disk is write normally with 
+When the entire script ends, check to see if the disk is write normally with \\
 the following command and test it on the raspberry pi:
 
 ```
