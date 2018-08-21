@@ -33,7 +33,8 @@ git clone https://github.com/dydgns2017/raspberrypi_img_backup_script.git
 cd raspberrypi_img_backup_script
 ```
 
-Before using the script, make sure that flash memory is plugged in and check the memory device name through the fdisk command as follows:
+Before using the script, make sure that flash memory is plugged 
+in and check the memory device name through the fdisk command as follows:
 
 ```
 sudo fdisk -l 
@@ -54,7 +55,8 @@ Device     Boot Start     End Sectors  Size Id Type
 /dev/sdb2       98304 4138976 4040673  1.9G 83 Linux
 ```
 
-Remember the name of the printed memory device and run the script by specifying the device name and image file name as factor values.
+Remember the name of the printed memory device and run the script by 
+specifying the device name and image file name as factor values.
 
 ```
 sudo bash raspberrypi_img_backup.sh /dev/xxx xxx.img
@@ -66,7 +68,8 @@ ex ) excute script
 sudo bash raspberrypi_img_backup.sh /dev/sdb Raspberrypi.img
 ```
 
-When the entire script ends, check to see if the disk is write normally with the following command and test it on the raspberry pi:
+When the entire script ends, check to see if the disk is write normally with 
+the following command and test it on the raspberry pi:
 
 ```
 sudo fdisk -l
