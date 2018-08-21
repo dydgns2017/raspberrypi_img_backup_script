@@ -14,6 +14,8 @@ However, remaining these storage space leads to speed lag of reading and writing
 Concerning about how to resize perfect made me write this script.
 Although the function is quite straightforward and a bit mixed up cause I’m not a professional programmer, I hope to be helpful.
 
+If you use this script to create a Raspberry pie backup image file, you can create an image file that is more efficient than gparted by creating an image file with 1 to 0.5% free space as shown in pictures 2 and 3. In addition, auto resizing function is also written to the script when booting SD card, so you do not need to resize the partition using raspi-config after booting.
+
 ## Getting Started
 * OS : ubuntu or debian .. (etc)
 * Prerequisites Program : nothing..
