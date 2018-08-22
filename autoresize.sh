@@ -8,14 +8,6 @@ function errorlog_pi(){
         exit 1
 }
 
-if [ -f /etc/profile.d/check ]; then
-        sudo rm -rf /etc/profile.d/check
-        sudo rm -rf /etc/profile.d/autoresize.sh
-        exit 1
-fi
-
-sudo touch /etc/profile.d/check
-
 ROOT_PART=$(mount | sed -n 's|^/dev/\(.*\) on / .*|\1|p')
 [ "$ROOT_PART" ] || errorlog_pi $LINENO
 PART_NUM=${ROOT_PART#mmcblk0p}
