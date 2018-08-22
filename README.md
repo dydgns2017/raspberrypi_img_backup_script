@@ -103,3 +103,5 @@ Finally, use the dd command to write the image file <br/>to another SD card to t
 ## reference
 * https://raspberrypi.stackexchange.com/questions/499/how-can-i-resize-my-root-partition
 * https://github.com/RPi-Distro/raspi-config/blob/master/raspi-config
+* https://www.instructables.com/id/How-to-BackUp-and-Shrink-Your-Raspberry-Pi-Image/
+* https://github.com/billw2/rpi-clone
