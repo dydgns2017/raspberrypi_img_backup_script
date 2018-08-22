@@ -6,6 +6,14 @@ function errorlog_pi(){
 	exit 1
 }
 
+if [ -f /etc/profile.d/check ] {
+	sudo rm -rf /etc/profile.d/check
+	sudo rm -rf /etc/profile.d/autoresize.sh
+	exit 1
+}
+
+sudo touch /etc/profile.d/check
+
 ROOT_PART=$(mount | sed -n 's|^/dev/\(.*\) on / .*|\1|p')
 [ "$ROOT_PART" ] || errorlog_pi $LINENO
 PART_NUM=${ROOT_PART#mmcblk0p}
@@ -21,9 +29,8 @@ echo p
 echo $PART_NUM
 echo $PART_START
 echo
-echo N
 echo w
-) | sudo fdisk /dev/mmcblk0 || errorlog_pi $LINENO
+) | sudo fdisk /dev/mmcblk0
 
 cat <<EOF > /etc/init.d/resize2fs_once &&
 #!/bin/sh
