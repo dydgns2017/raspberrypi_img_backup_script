@@ -1,16 +1,18 @@
-#### auto resize script
+#!/bin/bash
+
+## auto resize script
 ## reference :  https://github.com/RPi-Distro/raspi-config/blob/master/raspi-config
 
 function errorlog_pi(){
-	echo "Error, line : $1" >> /home/pi/resize_errorlog
-	exit 1
+        echo "Error, line : $1" >> /home/pi/resize_errorlog
+        exit 1
 }
 
-if [ -f /etc/profile.d/check ] {
-	sudo rm -rf /etc/profile.d/check
-	sudo rm -rf /etc/profile.d/autoresize.sh
-	exit 1
-}
+if [ -f /etc/profile.d/check ]; then
+        sudo rm -rf /etc/profile.d/check
+        sudo rm -rf /etc/profile.d/autoresize.sh
+        exit 1
+fi
 
 sudo touch /etc/profile.d/check
 

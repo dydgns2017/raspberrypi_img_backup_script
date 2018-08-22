@@ -117,17 +117,10 @@ cd /media/pi && sudo rm -rf ./*
 echo "File moving...(pim to pi)"
 cd /media/pim
 sudo mv ./* ../pi/ && echo "success file move" && cd /media
-sudo cp $gitdir'/autoresize.sh' ./pi/usr/lib/raspi-config/autoresize.sh
-sudo umount /media/pi
 
-## auto partition resize
-echo "boot partiotion config.."
-sudo mount $piDev'1' /media/pi && cd /media/pi
-temp=$(cat cmdline.txt)" init=/usr/lib/raspi-config/autoresize.sh"
-sudo sh -c "echo \"$temp\" > cmdline.txt"
-cd /media
+## SD card autoresize config
+sudo cp $gitdir'/autoresize.sh' ./pi/etc/profile.d/autoresize.sh
 sudo umount /media/pi
-
 
 ##create backup img file
 echo "create backup img file.."
@@ -143,8 +136,6 @@ sudo dd if=$piDev of=$HOME/backupfiles/$imgFilename bs=512 count=$endofsector
 
 if [ $? == 0 ]; then
 	echo "Success!.."
-	cd $HOME/backupfiles
-	ls -al | grep $imgFilename
 else
 	echo "Error, Flash read Faild!" && exit 1
 fi

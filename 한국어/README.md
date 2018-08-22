@@ -62,7 +62,7 @@ ex ) excute script
 sudo bash raspberrypi_img_backup.sh /dev/sdb Raspberrypi.img
 ```
 
-전체적인 스크립트가 종료되면 다음과 같은 명령어로 디스크가 정상적으로 write 되었는지 확인한 후, 라즈베리파이에서 테스트를 해보시길 바랍니다.
+전체적인 스크립트가 종료되면 다음과 같은 명령어로 디스크가 정상적으로 write 되었는지 확인합니다.
 
 ```
 sudo fdisk -l
@@ -75,6 +75,20 @@ Device     Boot Start     End Sectors  Size Id Type
 /dev/sdb1        8192   96663   88472 43.2M  c W95 FAT32 (LBA)
 /dev/sdb2       98304 4138976 4040673  1.9G 83 Linux
 ```
+
+이미지 백업은 기본적으로 $HOME/backupfiles로 설정되어 있으니 해당 디렉토리로 들어가서 이미지도 백업이 잘되었는지도 확인해봅니다.
+
+```
+cd $HOME/backupfiles
+ls -alh
+
+ex ) print
+-rw-r--r--  1 root       root       2.0G  8월 21 23:04 homes.img
+-rw-r--r--  1 root       root       2.7G  8월 21 12:11 RPibackup.img
+-rw-r--r--  1 root       root       2.0G  8월 21 13:59 test.img
+```
+
+마지막으로 이미지 파일을 dd 명령어로 다른 SD카드에다가 write하여 잘되는지 테스트해봅니다.
 
 ## 작성자
 * **정용훈** - *University : Sunkyul Univ* -

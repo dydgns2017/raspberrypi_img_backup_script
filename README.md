@@ -68,8 +68,7 @@ ex ) excute script
 sudo bash raspberrypi_img_backup.sh /dev/sdb Raspberrypi.img
 ```
 
-When the entire script ends, check to see if the disk is write normally with <br/>
-the following command and test it on the raspberry pi:
+After the entire script finishes, <br/>verify that the disk is normally written with the command:
 
 ```
 sudo fdisk -l
@@ -82,6 +81,20 @@ Device     Boot Start     End Sectors  Size Id Type
 /dev/sdb1        8192   96663   88472 43.2M  c W95 FAT32 (LBA)
 /dev/sdb2       98304 4138976 4040673  1.9G 83 Linux
 ```
+
+Image backups are set to $HOME/backupfiles by default, <br/> so go into the directory to see if the image backup was successful.
+
+```
+cd $HOME/backupfiles
+ls -alh
+
+ex ) print
+-rw-r--r--  1 root       root       2.0G  8월 21 23:04 homes.img
+-rw-r--r--  1 root       root       2.7G  8월 21 12:11 RPibackup.img
+-rw-r--r--  1 root       root       2.0G  8월 21 13:59 test.img
+```
+
+Finally, use the dd command to write the image file <br/>to another SD card to test its performance.
 
 ## Authors
 * **Yonghoon Jung** - *University : Sunkyul Univ* -
