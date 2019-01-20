@@ -76,10 +76,12 @@ cd /media/pi
 
 ## Filemove pi to pim
 echo "File moving...(pi to pim)"
-inodeValue=$(df -ik | grep /media/pi | awk {'print $3'})
-used=$(df -k | grep media/pi | awk {'print $3'})
-((used=$used+$inodeValue))
-((used=${used}+8192)) ## 4mb add..
+nodeValue=$(sudo df -ik | grep /media/pi | awk {'print $3'})
+used=$(sudo df -k | grep media/pi | awk {'print $3'})
+varValue=$(sudo du -k /media/pi/var | tail -n 1 | awk {'print $1'})
+((used=$used+$inodeValue+$varValue))
+((used=${used}+16384)) ## 16mb add..
+((used=${used}*1024/512))##change to sector
 #used=$(df -k | grep media | awk {'print $3'})
 #((used=${used}*1024/512)) ## sector
 #((used=${used}+34816)) ## 17MB add..
@@ -123,9 +125,9 @@ cd /media/pim
 sudo mv ./* ../pi/ && echo "success file move" && cd /media
 
 ## SD card autoresize config
-sudo cp $gitdir'/autoresize.sh' ./pi/home/pi/autoresize.sh
-sudo cp ./pi/etc/rc.local ./pi/etc/rc.local.orig
-sudo cp $gitdir'/rc.local' ./pi/etc/rc.local
+#sudo cp $gitdir'/autoresize.sh' ./pi/home/pi/autoresize.sh
+#sudo cp ./pi/etc/rc.local ./pi/etc/rc.local.orig
+#sudo cp $gitdir'/rc.local' ./pi/etc/rc.local
 sudo umount /media/pi
 
 ##create backup img file
