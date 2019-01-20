@@ -76,12 +76,16 @@ cd /media/pi
 
 ## Filemove pi to pim
 echo "File moving...(pi to pim)"
-used=$(df -k | grep media | awk {'print $3'})
-((used=${used}*1024/512)) ## sector
-((used=${used}+34816)) ## 17MB add..
-temp=$(sudo du -ks ./var | awk {'print $1'})
-((temp=${temp}*1024/512/2))
-((used=${used}+${temp}))
+inodeValue=$(df -ik | grep /media/pi | awk {'print $3'})
+used=$(df -k | grep media/pi | awk {'print $3'})
+((used=$used+$inodeValue))
+((used=${used}+8192)) ## 4mb add..
+#used=$(df -k | grep media | awk {'print $3'})
+#((used=${used}*1024/512)) ## sector
+#((used=${used}+34816)) ## 17MB add..
+#temp=$(sudo du -ks ./var | awk {'print $1'})
+#((temp=${temp}*1024/512/2))
+#((used=${used}+${temp}))
 
 if [ ! -n $used ]
 then
