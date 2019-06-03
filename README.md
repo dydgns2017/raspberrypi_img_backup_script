@@ -1,3 +1,7 @@
+![issue badge](https://img.shields.io/github/issues/dydgns2017/raspberrypi_img_backup_script.svg)
+![license](https://img.shields.io/github/license/dydgns2017/raspberrypi_img_backup_script.svg)
+![version](https://img.shields.io/badge/ubuntu-16.04-orange.svg)
+
 # raspberrypi_img_backup_script
 
 ## Explanation
